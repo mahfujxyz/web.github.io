@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Mahfujul Islam</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0a0015;
+      color: white;
+    }
+
+    .container {
+      width: 420px;
+      max-width: 90%;
+      background: rgba(0,0,0,0.55);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(150,0,255,0.5);
+      text-align: center;
+      position: relative;
+      padding-top: 0; /* remove extra top space */
+    }
+
+    /* ===== Cover Photo ===== */
+    .cover {
+      width: 100%;
+      height: 180px; /* cover height */
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+      pointer-events: none;
+    }
+
+    /* ===== Avatar ===== */
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #a200ff, #5e00b8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+      color: white;
+      box-shadow: 0 0 25px rgba(160,0,255,0.9);
+      overflow: hidden;
+      position: absolute;
+      top: 125px; /* position avatar halfway over the cover */
+      left: 50%;
+      transform: translateX(-50%);
+      border: 4px solid rgba(0,0,0,0.55); /* optional border for separation */
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .username {
+      font-size: 26px;
+      font-weight: 600;
+      margin-top: 70px; /* add space to account for avatar */
+    }
+
+    .badges {
+      margin: 10px 0;
+      font-size: 22px;
+    }
+
+    .status {
+      display: inline-block;
+      margin: 10px 0;
+      font-size: 16px;
+      color: #ddd;
+      animation: slideText 4s ease-in-out infinite alternate;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      font-size: 26px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      color: #ff00ff;
+      transform: scale(1.2);
+      text-shadow: 0 0 8px #ff00ff;
+    }
+
+    .views {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+
+    @keyframes slideText {
+      from { transform: translateX(0); }
+      to   { transform: translateX(12px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cover Photo -->
+    <div class="cover">
+      <img src="https://i.ibb.co.com/nqcQMybF/photo-2025-08-31-03-01-49.jpg" alt="photo-2025-08-31-03-01-49" border="0"></a>
+    </div>
+
+    <!-- Avatar -->
+    <div class="avatar">
+      <img src="https://i.ibb.co/DXqVp0y/photo-2025-08-30-21-50-55.jpg" alt="Profile Photo">
+    </div>
+
+    <div class="username">Md Mahfujul Islam</div>
+    <div class="badges">💻🛡️🔑</div>
+    <div class="status">"I see that curiosity in your eyes—don’t worry, I’m worth the wonder" 😎</div>
+
+    <div class="links">
+      <a href="https://discord.com/users/1304174626208874557" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://t.me/Mahfuj_Xyz" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="mailto:mdmahfuj2336@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.blockchain.com/btc/address/YOUR_WALLET" target="_blank"><i class="fab fa-bitcoin"></i></a>
+      <a href="https://x.com/Mahfuj_Xyz?t=BXNODh8VK3bPFN9Oi5W98w&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/qr/IHXHKDPXGU6VN1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <div class="views">👁 72,161</div>
+  </div>
+
+</body>
+</html>
