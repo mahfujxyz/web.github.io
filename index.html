@@ -1,171 +1,235 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Md Mahfujul Islam</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Coach Profile — Mobile Mockup</title>
+<style>
+:root{
+  --bg-gradient: linear-gradient(180deg, #1c1c1c, #3a3a3a);
+  --muted:#9a9a9a;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+body{
+  background:var(--bg-gradient);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  margin:0;
+}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Phone mockup container */
+.phone-wrap{
+  width:360px;
+  height:780px;
+  border-radius:40px 40px 0 0;
+  box-shadow:0 30px 80px rgba(20,20,20,0.25);
+  background:#2c2c2c;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  padding:18px;
+  box-sizing:border-box;
+  position:relative;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #0a0015;
-      color: white;
-    }
+/* screen container */
+.screen{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  flex:1;
+  justify-content:flex-start;
+  padding-bottom:20px;
+}
 
-    .container {
-      width: 420px;
-      max-width: 90%;
-      background: rgba(0,0,0,0.55);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 0 30px rgba(150,0,255,0.6);
-      text-align: center;
-      position: relative;
-    }
+/* Hero Card */
+.hero-card {
+  background:#000; 
+  border-radius:28px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+  width:100%;
+  border:2px solid #111;
+  box-sizing:border-box;
+  margin-top:50px; 
+  margin-bottom:20px;
+}
 
-    /* Cover Photo */
-    .cover {
-      width: 100%;
-      height: 180px;
-      overflow: hidden;
-      position: relative;
-    }
+/* Top row: photo + name/quote */
+.top-row {
+  display:flex;
+  width:100%;
+  align-items:flex-start;
+  gap:16px;
+}
 
-    .cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+/* Photo */
+.hero-wrapper {
+  flex:0 0 auto;
+  border-radius:16px;
+  overflow:hidden;
+  background:#000;
+  width:120px;
+  aspect-ratio:1 / 1; 
+}
 
-    .cover::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.8));
-      pointer-events: none;
-    }
+.hero-wrapper img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    /* Avatar */
-    .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #a200ff, #5e00b8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 30px rgba(160,0,255,1), 0 0 60px rgba(160,0,255,0.6);
-      overflow: hidden;
-      position: absolute;
-      top: 120px;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 4px solid rgba(0,0,0,0.55);
-    }
+/* Name & quote */
+.profile {
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+.name {
+  font-size:22px;
+  color:#fff;
+  font-weight:700;
+}
 
-    /* Username */
-    .username {
-      font-size: 26px;
-      font-weight: 700;
-      margin-top: 70px;
-      color: #fff;
-      font-family: monospace;
-    }
+.quote {
+  font-size:14px;
+  color:var(--muted);
+  margin-top:4px;
+  font-style:italic;
+}
 
-    .badges {
-      margin: 10px 0;
-      font-size: 22px;
-    }
+/* Social icons area outside hero card */
+.icons{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start; 
+  align-items:center; 
+  gap:12px; 
+  width:100%;
+}
 
-    /* Status/Bio */
-    .status {
-      display: inline-block;
-      margin: 8px 20px;
-      font-size: 16px;
-      color: #fff;
-      font-weight: 600;
-    }
+/* Single icon container fully clickable */
+.icon-container {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 12px;
+  background:#000; 
+  border-radius:28px;
+  border:2px solid #111; 
+  width:100%;
+  height:60px;
+  box-sizing:border-box;
+  justify-content:flex-start;
+  text-decoration:none;
+  cursor:pointer;
+}
 
-    /* Social Links */
-    .links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
+.icon-container .icon img,
+.icon-container .icon-label {
+  pointer-events:none; /* allow click on whole container */
+}
 
-    .links a {
-      font-size: 26px;
-      color: white;
-      transition: 0.3s;
-      text-shadow: 0 0 6px #a200ff;
-    }
+/* Icon styling */
+.icon{
+  width:48px; 
+  height:48px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  border-radius:12px;
+  background:#111;
+}
+.icon img{
+  width:32px;
+  height:32px;
+}
 
-    .links a:hover {
-      color: #ff00ff;
-      transform: scale(1.2);
-      text-shadow: 0 0 12px #ff00ff, 0 0 24px #a200ff;
-    }
+/* Label text next to icon */
+.icon-label {
+  color:#fff;
+  font-size:16px;
+  white-space:nowrap;
+}
 
-    /* Views Counter */
-    .views {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #aaa;
-      margin-bottom: 12px;
-    }
-  </style>
+/* Hover effect */
+.icon-container:hover {
+  background:#1a1a1a;
+  transition: background 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width:420px){
+  .phone-wrap{transform:scale(.9)}
+  .top-row{flex-direction:column; align-items:center;}
+  .profile{text-align:center;}
+  .hero-wrapper{width:90px;}
+  .icons{align-items:center;}
+  .icon-container{height:50px; gap:6px; padding:5px 10px;}
+  .icon{width:40px;height:40px;}
+  .icon img{width:24px;height:24px;}
+  .icon-label{font-size:14px;}
+}
+</style>
 </head>
 <body>
+<div class="phone-wrap">
+  <div class="screen">
 
-  <div class="container">
-    <!-- Cover Photo -->
-    <div class="cover">
-      <img src="https://i.ibb.co/nqcQMybF/photo-2025-08-31-03-01-49.jpg" alt="Cover Photo">
+    <!-- Hero Card: photo + name/quote -->
+    <div class="hero-card">
+      <div class="top-row">
+        <div class="hero-wrapper">
+          <img src="https://i.ibb.co.com/7NRMgDmZ/photo-2025-09-20-16-54-23.jpg" alt="Profile Image">
+        </div>
+        <div class="profile">
+          <h1 class="name">Md. Mahfujul Islam</h1>
+          <div class="quote">❝ It's All In The Mind ❞</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Avatar -->
-    <div class="avatar">
-      <img src="https://i.ibb.co.com/k64XjV6b/Gemini-Generated-Image-2c3enk2c3enk2c3e-01.png" alt="Gemini-Generated-Image-2c3enk2c3enk2c3e-01" border="0"></a>
+    <!-- Social icons outside hero card -->
+    <div class="icons">
+      <a href="https://www.instagram.com/md.mahfuj.xyz?igsh=bm5pZWhjMmdnMTR0" class="icon-container">
+        <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></div>
+        <span class="icon-label">@MD.MAHFUJ.XYZ</span>
+      </a>
+      <a href="https://t.me/Mahfuj_Xyz" class="icon-container">
+        <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></div>
+        <span class="icon-label">@Mahfuj_Xyz</span>
+      </a>
+      <a href="https://x.com/Mahfuj_Xyz?t=BXNODh8VK3bPFN9Oi5W98w&s=09" class="icon-container">
+        <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X"></div>
+        <span class="icon-label">@Mahfuj_Xyz</span>
+      </a>
+      <a href="https://www.facebook.com/md.mahfuj.xyz" class="icon-container">
+        <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></div>
+        <span class="icon-label">@md.mahfuj.xyz</span>
+      </a>
+      <a href="https://discord.com/users/1304174626208874557" class="icon-container">
+        <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord"></div>
+        <span class="icon-label">@mahfuj_xyz</span>
+      </a>
+      <a href="mailto:Mdmahfuj2336@gmail.com" class="icon-container">
+        <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Gmail"></div>
+        <span class="icon-label">Mail</span>
+      </a>
+      <a href="https://wa.me/qr/IHXHKDPXGU6VN1" class="icon-container">
+        <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></div>
+        <span class="icon-label">WhatsApp</span>
+      </a>
     </div>
 
-    <div class="username">Md Mahfujul Islam</div>
-    <div class="badges">💻🛡️🔑</div>
-    <div class="status">"I see that curiosity in your eyes—don’t worry, I’m worth the wonder" 😎</div>
-
-    <div class="links">
-      <a href="https://discord.com/users/1304174626208874557" target="_blank"><i class="fab fa-discord"></i></a>
-      <a href="https://t.me/Mahfuj_Xyz" target="_blank"><i class="fab fa-telegram"></i></a>
-      <a href="mailto:mdmahfuj2336@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.blockchain.com/btc/address/YOUR_WALLET" target="_blank"><i class="fab fa-bitcoin"></i></a>
-      <a href="https://x.com/Mahfuj_Xyz?t=BXNODh8VK3bPFN9Oi5W98w&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://wa.me/qr/IHXHKDPXGU6VN1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-
-    <div class="views">👁 72,161</div>
   </div>
-
+</div>
 </body>
 </html>
-
 
