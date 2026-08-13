@@ -4,18 +4,11 @@
 
 <meta charset="UTF-8">
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-  name="theme-color"
-  content="#050805"
->
+<meta name="theme-color" content="#050805">
 
 <title>Mahfuj — Personal Hub</title>
-
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -118,14 +111,19 @@ header{
   overflow:hidden;
 
   display:grid;
+
   grid-template-columns:280px 1fr;
+
   align-items:center;
+
   gap:34px;
 }
 
 .hero::before{
   content:"";
+
   position:absolute;
+
   inset:0;
 
   background:
@@ -135,6 +133,7 @@ header{
       rgba(3,6,3,.45) 48%,
       var(--bg) 100%
     ),
+
     url("https://i.ibb.co.com/9HZWzQ2D/aurora-borealis-northern-lights-mountain-range-night-time-3440x1440-5938.jpg")
     center top/cover no-repeat;
 
@@ -143,7 +142,9 @@ header{
 
 .hero::after{
   content:"";
+
   position:absolute;
+
   inset:0;
 
   background:
@@ -152,6 +153,7 @@ header{
       rgba(80,255,40,.08),
       transparent 38%
     ),
+
     linear-gradient(
       90deg,
       rgba(0,0,0,.18),
@@ -170,6 +172,7 @@ header{
   padding:5px;
 
   border:2px solid var(--green);
+
   border-radius:50%;
 
   box-shadow:
@@ -180,8 +183,11 @@ header{
 .profile{
   width:100%;
   height:100%;
+
   border-radius:50%;
+
   object-fit:cover;
+
   display:block;
 }
 
@@ -190,47 +196,69 @@ header{
   padding-top:30px;
 }
 
+
 .hello{
   color:var(--green);
+
   font-size:20px;
+
   margin-bottom:12px;
 }
 
+
 .hero h1{
   font-size:clamp(34px,5vw,61px);
+
   line-height:1.02;
+
   letter-spacing:-2px;
+
   margin-bottom:18px;
+
   font-weight:800;
 }
 
 
 .roles{
   display:flex;
+
   flex-wrap:wrap;
+
   align-items:center;
+
   gap:8px;
+
   color:#e7ebe5;
+
   font-size:16px;
 }
 
+
 .roles b{
   color:var(--green);
+
   font-weight:700;
 }
 
+
 .quote{
   margin-top:25px;
+
   font-size:18px;
+
   color:#e5e9e3;
 }
+
 
 .quote::before,
 .quote::after{
   color:var(--green);
+
   font-size:24px;
+
   font-weight:800;
 }
+
 
 .quote::before{
   content:"“";
@@ -244,6 +272,7 @@ header{
 /* ================= HERO CARDS ================= */
 
 .hero-cards{
+
   grid-column:1/-1;
 
   display:grid;
@@ -255,7 +284,9 @@ header{
   margin-top:-5px;
 }
 
+
 .mini-card{
+
   min-height:76px;
 
   border:1px solid var(--line);
@@ -276,16 +307,24 @@ header{
     inset 0 0 30px rgba(124,255,50,.025);
 }
 
+
 .note-icon{
   color:var(--green);
+
   font-size:30px;
 }
 
+
 .mini-card strong{
+
   display:block;
+
   color:var(--text);
+
   font-size:14px;
+
   line-height:1.5;
+
   font-weight:500;
 }
 
@@ -294,30 +333,41 @@ header{
 
 .tech{
   font-size:16px;
+
   color:#e9eee8;
 
   display:flex;
+
   align-items:center;
+
   gap:10px;
+
   flex-wrap:wrap;
 }
 
 .tech-item{
   display:flex;
+
   align-items:center;
+
   gap:6px;
+
   white-space:nowrap;
 }
 
 .tech-icon{
   width:22px;
+
   height:22px;
+
   object-fit:contain;
+
   display:block;
 }
 
 .dot{
   color:var(--green);
+
   margin:0 1px;
 }
 
@@ -325,6 +375,7 @@ header{
 /* ================= PANELS ================= */
 
 .panel{
+
   border:1px solid var(--line);
 
   border-radius:12px;
@@ -345,6 +396,7 @@ header{
 /* ================= SOCIAL ================= */
 
 .social{
+
   padding:27px 20px 22px;
 
   display:grid;
@@ -352,7 +404,7 @@ header{
   grid-template-columns:
     repeat(5,1fr)
     1px
-    repeat(2,1fr);
+    repeat(1,1fr);
 
   align-items:center;
 
@@ -361,23 +413,35 @@ header{
   margin-bottom:22px;
 }
 
+
 .social-divider{
+
   width:1px;
+
   height:78px;
+
   background:var(--line);
 }
 
+
 .social-item{
+
   text-align:center;
+
   transition:.25s ease;
 }
 
+
 .social-item:hover{
+
   transform:translateY(-4px);
 }
 
+
 .social-icon{
+
   width:54px;
+
   height:54px;
 
   margin:auto;
@@ -385,6 +449,7 @@ header{
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
   border-radius:14px;
@@ -396,21 +461,33 @@ header{
   background:rgba(0,0,0,.28);
 }
 
+
 .social-icon img{
+
   width:30px;
+
   height:30px;
+
   object-fit:contain;
+
   display:block;
 }
 
+
 .social-name{
+
   margin-top:9px;
+
   font-size:14px;
 }
 
+
 .social-handle{
+
   margin-top:7px;
+
   color:var(--green);
+
   font-size:12px;
 }
 
@@ -418,6 +495,7 @@ header{
 /* ================= ABOUT ================= */
 
 .about-grid{
+
   display:grid;
 
   grid-template-columns:1.18fr .82fr;
@@ -427,18 +505,25 @@ header{
   margin-bottom:22px;
 }
 
+
 .about{
+
   padding:22px;
 }
 
+
 .section-title{
+
   display:flex;
+
   align-items:center;
+
   gap:13px;
 
   color:var(--green);
 
   font-size:21px;
+
   font-weight:700;
 
   margin-bottom:4px;
@@ -448,7 +533,9 @@ header{
 /* 👤 ABOUT ME ICON */
 
 .user-icon{
+
   width:46px;
+
   height:46px;
 
   border-radius:50%;
@@ -456,10 +543,13 @@ header{
   border:1px solid var(--green);
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   font-size:25px;
+
   line-height:1;
 
   background:rgba(124,255,50,.025);
@@ -468,13 +558,19 @@ header{
     0 0 12px rgba(124,255,50,.08);
 }
 
+
 .section-sub{
+
   color:#aeb4ac;
+
   font-size:13px;
+
   margin-bottom:17px;
 }
 
+
 .info-row{
+
   min-height:57px;
 
   border-top:1px solid rgba(124,255,50,.12);
@@ -488,17 +584,25 @@ header{
   font-size:13px;
 }
 
+
 .info-icon{
+
   color:var(--green);
+
   font-size:20px;
 }
 
+
 .info-label{
+
   color:#e2e7df;
 }
 
+
 .info-value{
+
   color:#d0d5ce;
+
   line-height:1.55;
 }
 
@@ -506,22 +610,31 @@ header{
 /* ================= PNG BANGLADESH MAP ================= */
 
 .map-card{
+
   min-height:100%;
+
   padding:25px;
 
   display:flex;
+
   flex-direction:column;
+
   justify-content:center;
 
   overflow:hidden;
 }
 
+
 .map-wrap{
+
   width:100%;
+
   height:350px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   position:relative;
@@ -529,33 +642,45 @@ header{
   margin-bottom:8px;
 }
 
+
 .bd-map-image{
+
   width:100%;
+
   max-width:310px;
+
   height:350px;
 
   object-fit:contain;
 
   display:block;
-
-  image-rendering:auto;
 }
 
 
 .map-card h2{
+
   color:var(--green);
+
   font-size:22px;
+
   margin-bottom:8px;
 }
 
+
 .map-card p{
+
   color:#c8cec5;
+
   font-size:14px;
 }
 
+
 .map-quote{
+
   margin-top:24px;
+
   color:var(--green)!important;
+
   line-height:1.6;
 }
 
@@ -563,6 +688,7 @@ header{
 /* ================= ARCHIVE ================= */
 
 .archive{
+
   min-height:105px;
 
   padding:18px 28px;
@@ -578,14 +704,21 @@ header{
   margin-bottom:22px;
 }
 
+
 .archive-left{
+
   display:flex;
+
   align-items:center;
+
   gap:20px;
 }
 
+
 .archive-icon{
+
   width:76px;
+
   height:76px;
 
   border:1px solid var(--green);
@@ -593,7 +726,9 @@ header{
   border-radius:14px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   color:var(--green);
@@ -604,19 +739,29 @@ header{
     0 0 18px rgba(124,255,50,.08);
 }
 
+
 .archive-icon svg{
+
   width:42px;
+
   height:42px;
+
   display:block;
 }
 
+
 .archive-title{
+
   color:var(--green);
+
   font-size:21px;
+
   font-weight:700;
 }
 
+
 .archive-btn{
+
   border:1px solid var(--green);
 
   border-radius:8px;
@@ -634,7 +779,9 @@ header{
   transition:.25s ease;
 }
 
+
 .archive-btn:hover{
+
   background:rgba(124,255,50,.08);
 
   box-shadow:
@@ -645,6 +792,7 @@ header{
 /* ================= FOOTER QUOTE ================= */
 
 .final-quote{
+
   min-height:78px;
 
   padding:16px 30px;
@@ -660,7 +808,9 @@ header{
   margin-bottom:14px;
 }
 
+
 .quote-mark{
+
   color:var(--green);
 
   font-size:48px;
@@ -676,13 +826,19 @@ header{
   text-align:center;
 }
 
+
 .final-quote span{
+
   font-size:16px;
 }
 
+
 .mountain-line{
+
   margin-left:auto;
+
   width:280px;
+
   opacity:.8;
 }
 
@@ -690,6 +846,7 @@ header{
 /* ================= FOOTER ================= */
 
 footer{
+
   min-height:62px;
 
   padding:14px 20px;
@@ -705,17 +862,25 @@ footer{
   font-size:13px;
 }
 
+
 .footer-logo{
+
   color:var(--green);
+
   font-size:25px;
+
   font-weight:800;
 }
 
+
 .footer-right{
+
   color:#c8cdc6;
 }
 
+
 .footer-right b{
+
   color:var(--green);
 }
 
@@ -728,11 +893,14 @@ footer{
     padding:8px;
   }
 
+
   header{
     height:58px;
   }
 
+
   .hero{
+
     margin:-58px -8px 0;
 
     padding:105px 17px 28px;
@@ -744,38 +912,59 @@ footer{
     min-height:auto;
   }
 
+
   .profile-wrap{
+
     width:190px;
+
     height:190px;
+
     margin:0 auto;
   }
 
+
   .hero-content{
+
     padding:0;
+
     text-align:center;
   }
 
+
   .hello{
+
     font-size:17px;
   }
 
+
   .hero h1{
+
     font-size:31px;
+
     letter-spacing:-1px;
   }
 
+
   .roles{
+
     justify-content:center;
+
     font-size:13px;
+
     line-height:1.8;
   }
 
+
   .quote{
+
     font-size:15px;
+
     margin-top:17px;
   }
 
+
   .hero-cards{
+
     grid-column:auto;
 
     grid-template-columns:1fr;
@@ -785,22 +974,33 @@ footer{
     margin-top:0;
   }
 
+
   .mini-card{
+
     min-height:65px;
   }
 
+
   .tech{
+
     justify-content:center;
+
     font-size:13px;
+
     gap:6px;
   }
 
+
   .tech-icon{
+
     width:19px;
+
     height:19px;
   }
 
+
   .social{
+
     grid-template-columns:repeat(3,1fr);
 
     gap:22px 8px;
@@ -808,58 +1008,89 @@ footer{
     padding:22px 9px;
   }
 
+
   .social-divider{
+
     display:none;
   }
 
+
   .social-item:nth-last-child(-n+2){
+
     grid-column:auto;
   }
 
+
   .social-icon{
+
     width:48px;
+
     height:48px;
+
     font-size:24px;
   }
 
+
   .social-icon img{
+
     width:26px;
+
     height:26px;
   }
 
+
   .social-name{
+
     font-size:12px;
   }
 
+
   .social-handle{
+
     font-size:10px;
   }
 
+
   .about-grid{
+
     grid-template-columns:1fr;
+
     gap:14px;
   }
 
+
   .about{
+
     padding:16px 13px;
   }
 
+
   .section-title{
+
     font-size:18px;
   }
 
+
   .user-icon{
+
     width:46px;
+
     height:46px;
+
     font-size:24px;
   }
 
+
   .info-row{
+
     grid-template-columns:29px 75px 15px 1fr;
+
     font-size:11px;
   }
 
+
   .info-icon{
+
     font-size:17px;
   }
 
@@ -867,83 +1098,125 @@ footer{
   /* MAP MOBILE */
 
   .map-card{
+
     min-height:520px;
+
     padding:20px 14px;
   }
 
+
   .map-wrap{
+
     height:370px;
+
     margin-top:5px;
+
     margin-bottom:8px;
   }
 
+
   .bd-map-image{
+
     width:100%;
+
     max-width:300px;
+
     height:370px;
+
     object-fit:contain;
   }
 
+
   .map-card h2{
+
     font-size:22px;
   }
 
 
   .archive{
+
     padding:15px;
+
     min-height:88px;
   }
 
+
   .archive-left{
+
     gap:12px;
   }
 
+
   .archive-icon{
+
     width:58px;
+
     height:58px;
   }
 
+
   .archive-icon svg{
+
     width:34px;
+
     height:34px;
   }
 
+
   .archive-title{
+
     font-size:17px;
   }
 
+
   .archive-btn{
+
     padding:10px 12px;
+
     font-size:11px;
   }
 
 
   .final-quote{
+
     padding:15px;
+
     gap:12px;
   }
 
+
   .quote-mark{
+
     font-size:38px;
+
     width:30px;
+
     min-width:30px;
   }
 
+
   .final-quote span{
+
     font-size:12px;
   }
 
+
   .mountain-line{
+
     display:none;
   }
 
 
   footer{
+
     padding:13px;
+
     font-size:10px;
   }
 
+
   .footer-right{
+
     font-size:10px;
   }
 
@@ -953,23 +1226,33 @@ footer{
 @media(max-width:390px){
 
   .hero h1{
+
     font-size:27px;
   }
 
+
   .roles{
+
     font-size:11px;
   }
 
+
   .info-row{
+
     grid-template-columns:25px 65px 12px 1fr;
+
     font-size:10px;
   }
 
+
   .archive-title{
+
     font-size:15px;
   }
 
+
   .archive-btn{
+
     padding:9px 9px;
   }
 
@@ -1058,7 +1341,9 @@ footer{
 
 
     <div class="quote">
+
       Code. Create. Conquer.
+
     </div>
 
   </div>
@@ -1083,8 +1368,6 @@ footer{
 
     </div>
 
-
-    <!-- OS / TECH -->
 
     <div class="mini-card tech">
 
@@ -1309,7 +1592,8 @@ footer{
 
 
 
-  <!-- MAIL REMOVED -->
+  <div class="social-divider"></div>
+
 
 
   <a
@@ -1561,7 +1845,7 @@ footer{
 
       <img
         class="bd-map-image"
-        src="https://i.ibb.co.com/0jHYqBSj/Chat-GPT-Image-Aug-14-2026-12-45-02-AM.png"
+        src="https://i.ibb.co.com/XxtcwsDg/0f76c5fa-d95d-4673-8ba6-ad601c243aff.png"
         alt="Bangladesh Map - Narayanganj"
       >
 
@@ -1600,8 +1884,6 @@ footer{
 
     <div class="archive-icon">
 
-
-      <!-- FILE MANAGER ICON -->
 
       <svg
         viewBox="0 0 48 48"
@@ -1740,7 +2022,9 @@ function openArchive(){
 
 
   if(password === null){
+
     return;
+
   }
 
 
