@@ -31,11 +31,6 @@
 >
 
 
-<!-- D3 GEO -->
-
-<script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
-
-
 <style>
 
 /* ================= ROOT ================= */
@@ -346,9 +341,11 @@ header{
 
 .tech{
 
-  font-size:17px;
+  font-size:16px;
 
   color:#e9eee8;
+
+  flex-wrap:wrap;
 }
 
 
@@ -356,7 +353,24 @@ header{
 
   font-size:31px;
 
-  margin-right:12px;
+  margin-right:2px;
+}
+
+
+.tech .windows,
+.tech .android{
+
+  font-size:25px;
+
+  margin-left:2px;
+}
+
+
+.tech .ios{
+
+  font-size:28px;
+
+  margin-left:2px;
 }
 
 
@@ -364,7 +378,7 @@ header{
 
   color:var(--green);
 
-  margin:0 7px;
+  margin:0 5px;
 }
 
 
@@ -400,7 +414,7 @@ header{
   grid-template-columns:
     repeat(5,1fr)
     1px
-    repeat(2,1fr);
+    1fr;
 
   align-items:center;
 
@@ -603,7 +617,7 @@ header{
 }
 
 
-/* ================= REAL BANGLADESH MAP ================= */
+/* ================= BANGLADESH MAP ================= */
 
 .map-card{
 
@@ -639,7 +653,7 @@ header{
 }
 
 
-#bdMap{
+.map-wrap img{
 
   width:100%;
 
@@ -647,112 +661,9 @@ header{
 
   height:350px;
 
+  object-fit:contain;
+
   display:block;
-
-  overflow:visible;
-}
-
-
-/* Bangladesh outer boundary */
-
-.map-outline{
-
-  fill:rgba(70,255,40,.035);
-
-  stroke:var(--green);
-
-  stroke-width:1.6;
-
-  stroke-linejoin:round;
-
-  stroke-linecap:round;
-
-  vector-effect:non-scaling-stroke;
-}
-
-
-/* subtle internal district-like lines */
-
-.map-inner{
-
-  fill:none;
-
-  stroke:rgba(124,255,50,.13);
-
-  stroke-width:.65;
-
-  vector-effect:non-scaling-stroke;
-}
-
-
-/* Narayanganj glowing pin */
-
-.map-pin-ring{
-
-  fill:none;
-
-  stroke:rgba(124,255,50,.45);
-
-  stroke-width:1.2;
-
-  animation:mapPulse 2s infinite;
-}
-
-
-.map-pin{
-
-  fill:var(--green);
-
-  stroke:#031003;
-
-  stroke-width:2;
-
-  filter:
-    drop-shadow(0 0 5px var(--green))
-    drop-shadow(0 0 10px rgba(124,255,50,.7));
-}
-
-
-.map-pin-center{
-
-  fill:#061006;
-
-}
-
-
-@keyframes mapPulse{
-
-  0%,100%{
-    r:7;
-    opacity:.8;
-  }
-
-  50%{
-    r:13;
-    opacity:.2;
-  }
-}
-
-
-.map-label{
-
-  fill:var(--green);
-
-  font-family:Inter,Arial,sans-serif;
-
-  font-size:9px;
-
-  font-weight:700;
-
-  letter-spacing:.5px;
-
-  paint-order:stroke;
-
-  stroke:#030603;
-
-  stroke-width:3px;
-
-  stroke-linejoin:round;
 }
 
 
@@ -926,6 +837,16 @@ header{
 }
 
 
+.final-quote span b{
+
+  color:var(--green);
+
+  font-size:24px;
+
+  margin-left:4px;
+}
+
+
 .mountain-line{
 
   margin-left:auto;
@@ -1074,6 +995,35 @@ footer{
   }
 
 
+  .tech{
+
+    justify-content:center;
+
+    font-size:13px;
+
+    gap:7px;
+  }
+
+
+  .tech .linux{
+
+    font-size:27px;
+  }
+
+
+  .tech .windows,
+  .tech .android{
+
+    font-size:22px;
+  }
+
+
+  .tech .ios{
+
+    font-size:25px;
+  }
+
+
   .social{
 
     grid-template-columns:repeat(3,1fr);
@@ -1190,7 +1140,7 @@ footer{
   }
 
 
-  #bdMap{
+  .map-wrap img{
 
     width:100%;
 
@@ -1267,6 +1217,12 @@ footer{
   .final-quote span{
 
     font-size:12px;
+  }
+
+
+  .final-quote span b{
+
+    font-size:18px;
   }
 
 
@@ -1450,13 +1406,31 @@ footer{
         •
       </span>
 
-      Web
+      <span class="windows">
+        🪟
+      </span>
+
+      Windows
 
       <span class="dot">
         •
       </span>
 
-      Tech
+      <span class="android">
+        🤖
+      </span>
+
+      Android
+
+      <span class="dot">
+        •
+      </span>
+
+      <span class="ios">
+        
+      </span>
+
+      iOS
 
     </div>
 
@@ -1619,32 +1593,6 @@ footer{
 
   <a
     class="social-item"
-    href="mailto:Mdmahfuj2336@gmail.com"
-  >
-
-    <div class="social-icon">
-
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/281/281769.png"
-        alt="Gmail"
-      >
-
-    </div>
-
-    <div class="social-name">
-      Mail
-    </div>
-
-    <div class="social-handle">
-      Mail
-    </div>
-
-  </a>
-
-
-
-  <a
-    class="social-item"
     href="https://wa.me/qr/IHXHKDPXGU6VN1"
     target="_blank"
     rel="noopener noreferrer"
@@ -1686,8 +1634,6 @@ footer{
 
     <div class="section-title">
 
-
-      <!-- 👤 ICON -->
 
       <div class="user-icon">
         👤
@@ -1892,15 +1838,10 @@ footer{
 
     <div class="map-wrap">
 
-
-      <svg
-        id="bdMap"
-        viewBox="0 0 300 350"
-        aria-label="Bangladesh map showing Narayanganj"
+      <img
+        src="bangladesh-narayanganj-map.jpg"
+        alt="Bangladesh map showing Narayanganj"
       >
-
-      </svg>
-
 
     </div>
 
@@ -2008,6 +1949,7 @@ footer{
 
   <span>
     Stay focused. Keep building. Make it happen.
+    <b>”</b>
   </span>
 
 
@@ -2105,329 +2047,6 @@ function openArchive(){
   }
 
 }
-
-
-
-/* =========================================================
-   BANGLADESH MAP
-========================================================= */
-
-
-/*
-   Real Bangladesh boundary GeoJSON.
-
-   Source:
-   Bangladesh GeoJSON dataset.
-
-   Narayanganj:
-   Latitude  : 23.63366
-   Longitude : 90.496482
-*/
-
-
-const BANGLADESH_GEOJSON =
-  "https://raw.githubusercontent.com/ifahimreza/bangladesh-geojson/main/src/data/bangladesh.geojson";
-
-
-async function loadBangladeshMap(){
-
-
-  const svg =
-    d3.select("#bdMap");
-
-
-  const width = 300;
-
-  const height = 350;
-
-
-  try{
-
-
-    /*
-      Fetch actual Bangladesh boundary
-    */
-
-    const response =
-      await fetch(
-        BANGLADESH_GEOJSON,
-        {
-          cache:"force-cache"
-        }
-      );
-
-
-    if(!response.ok){
-
-      throw new Error(
-        "Bangladesh GeoJSON failed to load."
-      );
-
-    }
-
-
-    const bangladesh =
-      await response.json();
-
-
-
-    /*
-      Projection automatically fits
-      the real Bangladesh shape
-      inside our SVG.
-    */
-
-    const projection =
-      d3.geoMercator()
-        .fitExtent(
-          [
-            [18,12],
-            [282,338]
-          ],
-          bangladesh
-        );
-
-
-
-    const path =
-      d3.geoPath()
-        .projection(projection);
-
-
-
-    /*
-      Draw Bangladesh
-    */
-
-    svg.append("path")
-
-      .datum(bangladesh)
-
-      .attr(
-        "class",
-        "map-outline"
-      )
-
-      .attr(
-        "d",
-        path
-      );
-
-
-
-    /*
-      Add subtle geographic
-      texture using the outline
-      itself.
-
-      This keeps the map clean
-      instead of fake straight lines.
-    */
-
-
-
-    /*
-      NARAYANGANJ LOCATION
-
-      Official district coordinate
-      used here:
-
-      Latitude  = 23.63366
-      Longitude = 90.496482
-    */
-
-    const narayanganj =
-      projection(
-        [
-          90.496482,
-          23.63366
-        ]
-      );
-
-
-    const x =
-      narayanganj[0];
-
-    const y =
-      narayanganj[1];
-
-
-
-    /*
-      Outer glowing ring
-    */
-
-    svg.append("circle")
-
-      .attr(
-        "class",
-        "map-pin-ring"
-      )
-
-      .attr(
-        "cx",
-        x
-      )
-
-      .attr(
-        "cy",
-        y
-      )
-
-      .attr(
-        "r",
-        8
-      );
-
-
-
-    /*
-      Main pin
-    */
-
-    svg.append("circle")
-
-      .attr(
-        "class",
-        "map-pin"
-      )
-
-      .attr(
-        "cx",
-        x
-      )
-
-      .attr(
-        "cy",
-        y
-      )
-
-      .attr(
-        "r",
-        6
-      );
-
-
-
-    /*
-      Pin center
-    */
-
-    svg.append("circle")
-
-      .attr(
-        "class",
-        "map-pin-center"
-      )
-
-      .attr(
-        "cx",
-        x
-      )
-
-      .attr(
-        "cy",
-        y
-      )
-
-      .attr(
-        "r",
-        2
-      );
-
-
-
-    /*
-      Narayanganj label
-    */
-
-    svg.append("text")
-
-      .attr(
-        "class",
-        "map-label"
-      )
-
-      .attr(
-        "x",
-        x + 10
-      )
-
-      .attr(
-        "y",
-        y + 3
-      )
-
-      .text(
-        "Narayanganj"
-      );
-
-
-  }
-
-
-  catch(error){
-
-
-    console.error(
-      "Bangladesh map error:",
-      error
-    );
-
-
-    /*
-      If external GeoJSON is temporarily
-      unavailable, show a visible message
-      instead of a giant blank card.
-    */
-
-    svg.append("text")
-
-      .attr(
-        "x",
-        width / 2
-      )
-
-      .attr(
-        "y",
-        height / 2
-      )
-
-      .attr(
-        "text-anchor",
-        "middle"
-      )
-
-      .attr(
-        "fill",
-        "#7cff32"
-      )
-
-      .attr(
-        "font-family",
-        "Inter, Arial"
-      )
-
-      .attr(
-        "font-size",
-        "12"
-      )
-
-      .text(
-        "MAP LOADING..."
-      );
-
-  }
-
-}
-
-
-/*
-   Start map
-*/
-
-loadBangladeshMap();
-
 
 </script>
 
