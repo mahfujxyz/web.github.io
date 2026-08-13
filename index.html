@@ -10,7 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
+
 <style>
+
 :root{
   --bg:#030603;
   --panel:rgba(5,12,6,.78);
@@ -50,13 +53,14 @@ a{
   padding:14px;
 }
 
+
 /* ================= HEADER ================= */
 
 header{
   height:64px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:flex-start;
   position:relative;
   z-index:5;
 }
@@ -79,25 +83,6 @@ header{
   line-height:34px;
 }
 
-.menu{
-  width:34px;
-  height:34px;
-  border:0;
-  background:none;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:5px;
-  cursor:pointer;
-}
-
-.menu span{
-  display:block;
-  width:28px;
-  height:2px;
-  background:var(--green);
-  box-shadow:0 0 8px rgba(124,255,50,.45);
-}
 
 /* ================= HERO ================= */
 
@@ -201,10 +186,16 @@ header{
   font-weight:800;
 }
 
-.quote::before{content:"“";}
-.quote::after{content:"”";}
+.quote::before{
+  content:"“";
+}
 
-/* hero mini cards */
+.quote::after{
+  content:"”";
+}
+
+
+/* ================= HERO MINI CARDS ================= */
 
 .hero-cards{
   grid-column:1/-1;
@@ -254,6 +245,7 @@ header{
   margin:0 7px;
 }
 
+
 /* ================= PANELS ================= */
 
 .panel{
@@ -268,6 +260,7 @@ header{
     inset 0 0 40px rgba(124,255,50,.018),
     0 5px 30px rgba(0,0,0,.16);
 }
+
 
 /* ================= SOCIAL ================= */
 
@@ -325,6 +318,7 @@ header{
   color:var(--green);
   font-size:12px;
 }
+
 
 /* ================= ABOUT ================= */
 
@@ -389,6 +383,7 @@ header{
   line-height:1.55;
 }
 
+
 /* ================= MAP ================= */
 
 .map-card{
@@ -399,28 +394,38 @@ header{
   justify-content:center;
 }
 
+.map-wrap{
+  position:relative;
+  width:100%;
+  max-width:300px;
+  margin:0 auto 15px;
+}
+
 .map{
   width:100%;
-  max-width:260px;
-  margin:0 auto 15px;
+  height:auto;
   display:block;
+  overflow:visible;
 }
 
 .map-outline{
-  fill:rgba(70,255,40,.025);
+  fill:rgba(70,255,40,.035);
   stroke:var(--green);
-  stroke-width:2;
-}
-
-.map-lines{
-  fill:none;
-  stroke:rgba(124,255,50,.16);
-  stroke-width:1;
+  stroke-width:1.8;
+  stroke-linejoin:round;
 }
 
 .map-dot{
   fill:var(--green);
+  stroke:#030603;
+  stroke-width:2;
   filter:drop-shadow(0 0 8px var(--green));
+}
+
+.map-pulse{
+  fill:none;
+  stroke:rgba(124,255,50,.4);
+  stroke-width:1;
 }
 
 .map-card h2{
@@ -439,6 +444,7 @@ header{
   color:var(--green)!important;
   line-height:1.6;
 }
+
 
 /* ================= ARCHIVE ================= */
 
@@ -462,12 +468,19 @@ header{
   width:76px;
   height:76px;
   border:1px solid var(--green);
-  border-radius:50%;
+  border-radius:14px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:31px;
   color:var(--green);
+  background:rgba(0,0,0,.25);
+  box-shadow:0 0 18px rgba(124,255,50,.08);
+}
+
+.archive-icon svg{
+  width:42px;
+  height:42px;
+  display:block;
 }
 
 .archive-title{
@@ -491,6 +504,7 @@ header{
   background:rgba(124,255,50,.08);
   box-shadow:0 0 20px rgba(124,255,50,.12);
 }
+
 
 /* ================= FOOTER QUOTE ================= */
 
@@ -521,6 +535,7 @@ header{
   opacity:.8;
 }
 
+
 /* ================= FOOTER ================= */
 
 footer{
@@ -546,6 +561,7 @@ footer{
 .footer-right b{
   color:var(--green);
 }
+
 
 /* ================= MOBILE ================= */
 
@@ -669,8 +685,8 @@ footer{
     padding:20px;
   }
 
-  .map{
-    max-width:220px;
+  .map-wrap{
+    max-width:260px;
   }
 
   .archive{
@@ -685,7 +701,11 @@ footer{
   .archive-icon{
     width:58px;
     height:58px;
-    font-size:24px;
+  }
+
+  .archive-icon svg{
+    width:34px;
+    height:34px;
   }
 
   .archive-title{
@@ -724,6 +744,7 @@ footer{
   }
 }
 
+
 @media(max-width:390px){
 
   .hero h1{
@@ -747,37 +768,40 @@ footer{
     padding:9px 9px;
   }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="page">
 
+
 <header>
+
   <div class="logo">
     <div class="logo-mark">M</div>
     <span>MAHFUJ</span>
   </div>
 
-  <button class="menu" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </header>
+
 
 <!-- ================= HERO ================= -->
 
 <section class="hero">
 
   <div class="profile-wrap">
+
     <img
       src="https://i.ibb.co.com/qF0ngLQX/photo-2026-08-13-23-05-54.jpg"
       class="profile"
       alt="Md. Mahfujul Islam"
     >
+
   </div>
+
 
   <div class="hero-content">
 
@@ -786,12 +810,23 @@ footer{
     <h1>MD. MAHFUJUL ISLAM</h1>
 
     <div class="roles">
-      <span>Student</span><b>•</b>
-      <span>Creator</span><b>•</b>
-      <span>Traveller</span><b>•</b>
-      <span>Tech Enthusiast</span><b>•</b>
+
+      <span>Student</span>
+      <b>•</b>
+
+      <span>Creator</span>
+      <b>•</b>
+
+      <span>Traveller</span>
+      <b>•</b>
+
+      <span>Tech Enthusiast</span>
+      <b>•</b>
+
       <span>Crypto Enthusiast</span>
+
     </div>
+
 
     <div class="quote">
       Code. Create. Conquer.
@@ -799,30 +834,44 @@ footer{
 
   </div>
 
+
   <div class="hero-cards">
 
     <div class="mini-card">
+
       <div class="note-icon">📝</div>
+
       <strong>
         Build something<br>
         meaningful...
       </strong>
+
     </div>
 
+
     <div class="mini-card tech">
+
       <span class="linux">🐧</span>
-      Linux <span class="dot">•</span>
-      Web <span class="dot">•</span>
+
+      Linux
+      <span class="dot">•</span>
+
+      Web
+      <span class="dot">•</span>
+
       Tech
+
     </div>
 
   </div>
 
 </section>
 
+
 <!-- ================= SOCIAL ================= -->
 
 <section class="panel social">
+
 
   <a
     class="social-item"
@@ -830,15 +879,22 @@ footer{
     target="_blank"
     rel="noopener noreferrer"
   >
+
     <div class="social-icon">
+
       <img
         src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
         alt="Instagram"
       >
+
     </div>
+
     <div class="social-name">Instagram</div>
+
     <div class="social-handle">@MD.MAHFUJ.XYZ</div>
+
   </a>
+
 
   <a
     class="social-item"
@@ -846,15 +902,22 @@ footer{
     target="_blank"
     rel="noopener noreferrer"
   >
+
     <div class="social-icon">
+
       <img
         src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"
         alt="Telegram"
       >
+
     </div>
+
     <div class="social-name">Telegram</div>
+
     <div class="social-handle">@Mahfuj_Xyz</div>
+
   </a>
+
 
   <a
     class="social-item"
@@ -862,15 +925,22 @@ footer{
     target="_blank"
     rel="noopener noreferrer"
   >
+
     <div class="social-icon">
+
       <img
         src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
         alt="Facebook"
       >
+
     </div>
+
     <div class="social-name">Facebook</div>
+
     <div class="social-handle">@md.mahfuj.xyz</div>
+
   </a>
+
 
   <a
     class="social-item"
@@ -878,15 +948,22 @@ footer{
     target="_blank"
     rel="noopener noreferrer"
   >
+
     <div class="social-icon">
+
       <img
         src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
         alt="X"
       >
+
     </div>
+
     <div class="social-name">X (Twitter)</div>
+
     <div class="social-handle">@Mahfuj_Xyz</div>
+
   </a>
+
 
   <a
     class="social-item"
@@ -894,31 +971,46 @@ footer{
     target="_blank"
     rel="noopener noreferrer"
   >
+
     <div class="social-icon">
+
       <img
         src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"
         alt="Discord"
       >
+
     </div>
+
     <div class="social-name">Discord</div>
+
     <div class="social-handle">@mahfuj_xyz</div>
+
   </a>
 
+
   <div class="social-divider"></div>
+
 
   <a
     class="social-item"
     href="mailto:Mdmahfuj2336@gmail.com"
   >
+
     <div class="social-icon">
+
       <img
         src="https://cdn-icons-png.flaticon.com/512/281/281769.png"
         alt="Gmail"
       >
+
     </div>
+
     <div class="social-name">Mail</div>
+
     <div class="social-handle">Mail</div>
+
   </a>
+
 
   <a
     class="social-item"
@@ -926,187 +1018,296 @@ footer{
     target="_blank"
     rel="noopener noreferrer"
   >
+
     <div class="social-icon">
+
       <img
         src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
         alt="WhatsApp"
       >
+
     </div>
+
     <div class="social-name">WhatsApp</div>
+
     <div class="social-handle">WhatsApp</div>
+
   </a>
 
+
 </section>
+
 
 <!-- ================= ABOUT + MAP ================= -->
 
 <section class="about-grid">
 
+
   <div class="panel about">
 
+
     <div class="section-title">
+
       <div class="user-icon">●</div>
+
       <div>ABOUT ME</div>
+
     </div>
 
-    <div class="section-sub">A few things about me</div>
+
+    <div class="section-sub">
+      A few things about me
+    </div>
+
 
     <div class="info-row">
+
       <div class="info-icon">⌖</div>
+
       <div class="info-label">From</div>
+
       <div>:</div>
-      <div class="info-value">Narayanganj, Bangladesh</div>
+
+      <div class="info-value">
+        Narayanganj, Bangladesh
+      </div>
+
     </div>
 
+
     <div class="info-row">
+
       <div class="info-icon">⌂</div>
+
       <div class="info-label">Lives in</div>
+
       <div>:</div>
-      <div class="info-value">Narayanganj, Bangladesh</div>
+
+      <div class="info-value">
+        Narayanganj, Bangladesh
+      </div>
+
     </div>
 
+
     <div class="info-row">
+
       <div class="info-icon">▥</div>
+
       <div class="info-label">Education</div>
+
       <div>:</div>
+
       <div class="info-value">
+
         BBA (Hons.) Department Of Management<br>
+
         Govt. Tolaram College & University<br>
+
         10 May 2026 - Current
+
       </div>
+
     </div>
 
+
     <div class="info-row">
+
       <div class="info-icon">♙</div>
+
       <div class="info-label">College</div>
+
       <div>:</div>
+
       <div class="info-value">
+
         Govt. Tolaram College<br>
+
         10 September 2023 - 8 August 2025
+
       </div>
+
     </div>
 
+
     <div class="info-row">
+
       <div class="info-icon">♢</div>
+
       <div class="info-label">School</div>
+
       <div>:</div>
+
       <div class="info-value">
+
         I.E.T Government High School<br>
+
         5 February 2018 - 30 April 2023
+
       </div>
+
     </div>
 
+
     <div class="info-row">
+
       <div class="info-icon">▣</div>
+
       <div class="info-label">Date of Birth</div>
+
       <div>:</div>
-      <div class="info-value">23 March 2006</div>
+
+      <div class="info-value">
+        23 March 2006
+      </div>
+
     </div>
 
+
     <div class="info-row">
+
       <div class="info-icon">★</div>
+
       <div class="info-label">Interests</div>
+
       <div>:</div>
+
       <div class="info-value">
+
         Technology, Crypto, Linux,<br>
+
         Travel, Photography, Learning<br>
+
         New Things
+
       </div>
+
     </div>
+
 
   </div>
+
+
+  <!-- ================= BANGLADESH MAP ================= -->
 
   <div class="panel map-card">
 
-    <svg class="map" viewBox="0 0 300 360" aria-label="Bangladesh map">
 
-      <path
-        class="map-outline"
-        d="M104 14
-        C90 25 80 42 69 55
-        C58 67 48 73 42 90
-        C35 108 44 122 38 139
-        C31 157 38 171 50 181
-        C60 191 54 207 67 219
-        C79 230 85 244 83 259
-        C81 275 95 286 107 292
-        C120 299 130 314 142 329
-        C151 341 165 344 175 332
-        C187 318 186 300 199 290
-        C213 279 230 269 234 250
-        C238 230 224 215 231 197
-        C238 179 253 168 257 150
-        C262 131 249 117 235 108
-        C222 99 220 82 208 72
-        C194 60 180 63 166 54
-        C153 46 150 30 137 21
-        C127 14 116 10 104 14Z"
-      />
+    <div class="map-wrap">
 
-      <path
-        class="map-lines"
-        d="M72 83L225 214
-        M55 129L207 280
-        M95 45L183 325
-        M44 171L247 150
-        M68 214L229 102
-        M96 270L220 192"
-      />
+      <svg
+        id="bdMap"
+        class="map"
+        viewBox="0 0 300 360"
+        aria-label="Bangladesh map with Narayanganj location"
+      ></svg>
 
-      <circle
-        class="map-dot"
-        cx="145"
-        cy="186"
-        r="7"
-      />
+    </div>
 
-    </svg>
 
     <h2>NARAYANGANJ</h2>
+
     <p>My Hometown</p>
 
+
     <div class="map-quote">
+
       “A city behind every story.”
+
     </div>
+
 
   </div>
 
+
 </section>
+
 
 <!-- ================= ARCHIVE ================= -->
 
 <section class="panel archive">
 
+
   <div class="archive-left">
 
-    <div class="archive-icon">▣</div>
 
-    <div class="archive-title">
-      MAHFUJ ARCHIVE 🔒
+    <div class="archive-icon">
+
+      <svg
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+      >
+
+        <path
+          d="M6 13.5C6 11.6 7.6 10 9.5 10H20l4 4h14.5c1.9 0 3.5 1.6 3.5 3.5v17c0 1.9-1.6 3.5-3.5 3.5h-29C7.6 38 6 36.4 6 34.5v-21Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linejoin="round"
+        />
+
+        <path
+          d="M6.5 17h35"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+        />
+
+        <path
+          d="M18 25h12M18 29.5h8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+      </svg>
+
     </div>
 
+
+    <div class="archive-title">
+
+      MAHFUJ ARCHIVE 🔒
+
+    </div>
+
+
   </div>
+
 
   <button
     class="archive-btn"
     onclick="openArchive()"
   >
+
     Enter Archive &nbsp; 🔒
+
   </button>
 
+
 </section>
+
 
 <!-- ================= FINAL QUOTE ================= -->
 
 <section class="panel final-quote">
 
-  <div class="quote-mark">“</div>
+
+  <div class="quote-mark">
+    “
+  </div>
+
 
   <span>
     Stay focused. Keep building. Make it happen.
   </span>
 
-  <svg class="mountain-line" viewBox="0 0 320 80">
+
+  <svg
+    class="mountain-line"
+    viewBox="0 0 320 80"
+  >
 
     <polyline
       points="0,72 25,67 45,70 70,53 90,61 110,40 130,55 153,28 174,49 196,23 216,48 238,32 260,53 284,42 304,57 320,49"
@@ -1118,32 +1319,57 @@ footer{
 
   </svg>
 
+
 </section>
+
 
 <!-- ================= FOOTER ================= -->
 
 <footer class="panel">
 
+
   <div>
-    <span class="footer-logo">M</span>
+
+    <span class="footer-logo">
+      M
+    </span>
+
     &nbsp; © 2026 Mahfuj
-    <span style="color:#7cff32;"> • </span>
+
+    <span style="color:#7cff32;">
+      •
+    </span>
+
     All rights reserved
+
   </div>
 
+
   <div class="footer-right">
+
     <b>&lt;/&gt;</b>
+
     &nbsp; Built with passion
+
   </div>
+
 
 </footer>
 
+
 </div>
 
+
 <script>
+
+
+/* ================= ARCHIVE PASSWORD ================= */
+
 function openArchive(){
 
-  const password = prompt("🔒 MAHFUJ ARCHIVE\n\nEnter password:");
+  const password = prompt(
+    "🔒 MAHFUJ ARCHIVE\n\nEnter password:"
+  );
 
   if(password === null) return;
 
@@ -1156,8 +1382,115 @@ function openArchive(){
     alert("Access denied.");
 
   }
+
 }
+
+
+/* ================= BANGLADESH MAP ================= */
+
+async function createBangladeshMap(){
+
+  const svg = d3.select("#bdMap");
+
+  const width = 300;
+  const height = 360;
+
+
+  try{
+
+    const geo = await fetch(
+      "https://raw.githubusercontent.com/glynnbird/countriesgeojson/master/bangladesh.geojson"
+    ).then(response => {
+
+      if(!response.ok){
+        throw new Error("Map data could not be loaded.");
+      }
+
+      return response.json();
+
+    });
+
+
+    /*
+      Bangladesh map projection
+    */
+
+    const projection = d3.geoMercator()
+      .fitExtent(
+        [[18,18],[282,342]],
+        geo
+      );
+
+
+    const path = d3.geoPath()
+      .projection(projection);
+
+
+    /*
+      Draw actual Bangladesh boundary
+    */
+
+    svg.append("path")
+      .datum(geo)
+      .attr("class","map-outline")
+      .attr("d",path);
+
+
+    /*
+      Narayanganj exact location
+
+      Latitude:
+      23.62402
+
+      Longitude:
+      90.49931
+    */
+
+    const narayanganj = projection([
+      90.49931,
+      23.62402
+    ]);
+
+
+    /*
+      Outer glowing pulse
+    */
+
+    svg.append("circle")
+      .attr("class","map-pulse")
+      .attr("cx",narayanganj[0])
+      .attr("cy",narayanganj[1])
+      .attr("r",10);
+
+
+    /*
+      Exact Narayanganj dot
+    */
+
+    svg.append("circle")
+      .attr("class","map-dot")
+      .attr("cx",narayanganj[0])
+      .attr("cy",narayanganj[1])
+      .attr("r",5);
+
+
+  }catch(error){
+
+    console.error(
+      "Bangladesh map failed to load:",
+      error
+    );
+
+  }
+
+}
+
+
+createBangladeshMap();
+
+
 </script>
+
 
 </body>
 </html>
